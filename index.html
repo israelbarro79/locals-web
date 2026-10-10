@@ -47,8 +47,8 @@ img{max-width:100%}
 
 header{position:sticky;top:0;z-index:50;background:var(--ink);border-bottom:3px solid var(--sky)}
 .hbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;padding-bottom:12px}
-.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
-.brand .star{width:56px;height:56px}.brand .word{height:48px}
+.brand{display:flex;align-items:center;text-decoration:none}
+.brand .star{width:56px;height:56px;display:block}
 nav.main{display:flex;flex-wrap:wrap;gap:10px}
 nav.main a{min-height:44px;padding:0 14px;font-size:17px;border:2px solid var(--bone)}
 nav.main a.on{background:var(--sky);color:var(--ink);transform:rotate(-2deg)}
@@ -58,19 +58,22 @@ nav.main a.on{background:var(--sky);color:var(--ink);transform:rotate(-2deg)}
 
 .hero{background:#141516}
 .hero .wrap{padding-top:48px;padding-bottom:96px;display:flex;flex-direction:column;gap:32px}
-.titlerow{display:flex;flex-wrap:wrap;align-items:center;gap:20px}
-.titlerow .bigstar{width:120px;height:120px;transform:rotate(-8deg)}
-.titlerow h1{margin:0;font-size:160px;line-height:.82;letter-spacing:.01em}
+.titlerow{display:flex;flex-wrap:wrap;align-items:center;gap:24px}
+.titlerow .bigstar{width:150px;height:150px;transform:rotate(-8deg)}
+.titlerow h1{margin:0;line-height:0}
+.titlerow h1 img{display:block;width:min(520px,62vw);height:auto}
 .heroframe{position:relative}
 .heroframe .paper{position:relative;padding:16px 16px 60px;transform:rotate(-1deg);box-shadow:0 18px 40px rgba(0,0,0,.6)}
-.heroframe .cap{position:absolute;bottom:16px;left:22px;font-size:28px;color:var(--ink)}
+.heroframe .cap{position:absolute;bottom:14px;left:22px;font-size:28px;color:var(--ink)}
 .seal{position:absolute;right:30px;bottom:-56px;width:170px;height:170px;z-index:3}
 .seal svg{width:100%;height:100%}
 .seal img{position:absolute;left:50%;top:50%;width:36%;transform:translate(-50%,-50%)}
 
 .musica{background:var(--sky);color:var(--ink);position:relative;margin-top:-30px;clip-path:polygon(0 2%,9% .3%,21% 1.8%,36% 0,50% 1.6%,64% .2%,78% 1.9%,90% .3%,100% 1.4%,100% 98.4%,88% 100%,74% 98.4%,59% 99.8%,44% 98.2%,29% 99.8%,15% 98.4%,0 99.6%)}
-.musica .wrap{padding-top:110px;padding-bottom:110px;display:flex;flex-direction:column;gap:44px}
+.musica .wrap{padding-top:130px;padding-bottom:110px;display:flex;flex-direction:column;gap:44px}
 .headrow{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px}
+.stack-title{line-height:1}
+.stack-title .hl{display:inline-block;margin-top:12px;background:var(--ink);color:var(--bone);padding:4px 12px 0;line-height:.95}
 .singles{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:40px}
 .single{position:relative;padding:16px 16px 22px;display:flex;flex-direction:column;gap:16px;transform:rotate(var(--r))}
 .single .cover{display:block;width:100%;aspect-ratio:1;object-fit:cover;border:2px solid var(--ink)}
@@ -88,7 +91,8 @@ nav.main a.on{background:var(--sky);color:var(--ink);transform:rotate(-2deg)}
 .banda .txt{flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:18px}
 .collage{flex:1.3 1 520px;min-width:0;position:relative;height:620px}
 .collage .ph{position:absolute;padding:10px 10px 36px}
-.collage .ph img{display:block;width:100%;object-fit:cover}
+.collage .ph img{display:block;width:100%;object-fit:cover;background:#1a1a1a;transition:opacity .4s}
+.collage .ph .credit{position:absolute;bottom:8px;right:12px;font-size:11px;color:#55534E}
 
 .merch{background:var(--navy)}
 .merch .wrap{padding-top:88px;padding-bottom:88px;display:flex;flex-direction:column;gap:36px}
@@ -117,6 +121,7 @@ nav.main a.on{background:var(--sky);color:var(--ink);transform:rotate(-2deg)}
 .insta .wrap{padding-top:80px;padding-bottom:80px}
 .grid-insta{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:26px}
 .polaroid{position:relative;display:block;padding:9px 9px 30px;transform:rotate(var(--r));box-shadow:0 10px 24px rgba(0,0,0,.5)}
+.polaroid img{display:block;width:100%;aspect-ratio:1;object-fit:cover;background:#1a1a1a}
 
 footer{background:#070708;border-top:3px solid var(--sky)}
 footer .wrap{padding-top:48px;padding-bottom:48px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
@@ -127,12 +132,14 @@ footer .wrap{padding-top:48px;padding-bottom:48px;display:flex;flex-wrap:wrap;al
  nav.main a{justify-content:flex-start}
  .menu-btn{display:flex}
  .socials{display:none}
- .titlerow h1{font-size:96px}
- .titlerow .bigstar{width:72px;height:72px}
+ .titlerow{gap:16px}
+ .titlerow .bigstar{width:84px;height:84px}
+ .titlerow h1 img{width:min(380px,58vw)}
  .h2{font-size:56px}
  .h3{font-size:36px}
- .seal{width:110px;height:110px;right:8px;bottom:-40px}
- .heroframe .cap{font-size:20px}
+ .musica .wrap{padding-top:110px}
+ .seal{width:96px;height:96px;right:-6px;top:-40px;bottom:auto}
+ .heroframe .cap{font-size:19px;bottom:12px;left:14px}
  .collage{height:auto;display:flex;flex-direction:column;gap:28px}
  .collage .ph{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;width:100%!important}
  .ticket{grid-template-columns:76px 1fr}
@@ -142,7 +149,13 @@ footer .wrap{padding-top:48px;padding-bottom:48px;display:flex;flex-wrap:wrap;al
  .pname{font-size:13px}
  .grid-insta{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
 }
-@media (max-width:420px){.titlerow h1{font-size:76px}.brand .word{height:36px}.brand .star{width:42px;height:42px}}
+@media (max-width:420px){
+ .brand .star{width:46px;height:46px}
+ .titlerow .bigstar{width:64px;height:64px}
+ .titlerow h1 img{width:62vw}
+ .heroframe .paper{padding:10px 10px 48px}
+ .heroframe .cap{font-size:16px}
+}
 </style>
 </head>
 <body>
@@ -150,7 +163,7 @@ footer .wrap{padding-top:48px;padding-bottom:48px;display:flex;flex-wrap:wrap;al
 
 <header>
 <div class="wrap hbar">
-<a href="#inicio" class="brand" aria-label="LOCALS, inicio"><img class="star" src="img/79aca3096d.png" alt=""><img class="word" src="img/e9071626e5.png" alt="LOCALS"></a>
+<a href="#inicio" class="brand" aria-label="LOCALS, inicio"><img class="star" src="img/79aca3096d.png" alt=""></a>
 <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
 <nav class="main" id="nav">
 <a href="#musica" class="btn">Música</a>
@@ -172,7 +185,7 @@ footer .wrap{padding-top:48px;padding-bottom:48px;display:flex;flex-wrap:wrap;al
 <div class="wrap">
 <div class="titlerow">
 <img class="bigstar" src="img/79aca3096d.png" alt="">
-<h1 class="anton">LOCALS</h1>
+<h1><img src="img/logo-locals-titulo.png" alt="LOCALS" width="1400" height="886"></h1>
 <span class="mono" style="align-self:flex-end;margin-bottom:14px;font-size:16px;letter-spacing:.18em;text-transform:uppercase;color:#B9B3A4">Rock · Cádiz</span>
 </div>
 <div class="heroframe">
@@ -180,7 +193,7 @@ footer .wrap{padding-top:48px;padding-bottom:48px;display:flex;flex-wrap:wrap;al
 <div class="tape" style="top:-14px;left:60px;transform:rotate(-5deg)"></div>
 <div class="tape" style="top:-12px;right:70px;transform:rotate(7deg)"></div>
 <img src="img/63c1c0a2d5.jpg" alt="LOCALS ensayando" style="display:block;width:100%;aspect-ratio:1280/693;object-fit:cover">
-<span class="cap marker">Si no eres de aquí…</span>
+<span class="cap marker">Si no eres de aquí… ya lo serás</span>
 </div>
 <div class="seal" aria-hidden="true">
 <svg class="spin" viewBox="0 0 160 160"><defs><path id="c3" d="M80 80 m-58 0 a58 58 0 1 1 116 0 a58 58 0 1 1 -116 0"/></defs><circle cx="80" cy="80" r="78" fill="#E0342A" stroke="#0E0E0F" stroke-width="3"/><text font-family="Anton, Impact, sans-serif" font-size="22" letter-spacing="4" fill="#0E0E0F"><textPath href="#c3">ONLY LOCALS ★ ONLY LOCALS ★</textPath></text></svg>
@@ -198,14 +211,14 @@ footer .wrap{padding-top:48px;padding-bottom:48px;display:flex;flex-wrap:wrap;al
 <section id="musica" class="musica">
 <div class="wrap">
 <div class="headrow">
-<h2 class="anton h2">Nuestros<br><span style="background:var(--ink);color:var(--bone);padding:0 12px">singles</span></h2>
+<h2 class="anton h2 stack-title">Nuestros<br><span class="hl">singles</span></h2>
 <a href="https://open.spotify.com/intl-es/artist/4u54qrbDZgzaM3SdbEctEc" target="_blank" rel="noopener" class="btn dark lift">Perfil en Spotify →</a>
 </div>
 <div class="singles">
 <article class="paper stk single" style="--r:-1.5deg">
 <div class="tape" style="top:-15px;left:50%;margin-left:-60px;transform:rotate(-4deg)"></div>
 <img src="img/2921b1d5c2.jpg" alt="Portada de Calibre" class="cover">
-<div class="col6"><span class="mono small dim">Single · [AÑO]</span><h3 class="anton h3">Calibre</h3></div>
+<div class="col6"><span class="mono small dim">Single · 2025</span><h3 class="anton h3">Calibre</h3></div>
 <div class="row10" style="margin-top:auto">
 <a href="https://open.spotify.com/intl-es/artist/4u54qrbDZgzaM3SdbEctEc" target="_blank" rel="noopener" class="btn dark sm">Spotify</a>
 <a href="https://www.youtube.com/@localsrockband" target="_blank" rel="noopener" class="btn outline-d sm">YouTube</a>
@@ -214,7 +227,7 @@ footer .wrap{padding-top:48px;padding-bottom:48px;display:flex;flex-wrap:wrap;al
 <article class="paper stk single" style="--r:1deg">
 <div class="tape" style="top:-15px;left:50%;margin-left:-60px;transform:rotate(5deg)"></div>
 <img src="img/39a428ee22.jpg" alt="Portada de Pa’ qué me invitan" class="cover">
-<div class="col6"><span class="mono small dim">Single · [AÑO] · con videoclip</span><h3 class="anton h3">Pa’ qué me invitan</h3></div>
+<div class="col6"><span class="mono small dim">Single · 2026 · con videoclip</span><h3 class="anton h3">Pa’ qué me invitan</h3></div>
 <div class="row10" style="margin-top:auto">
 <a href="https://open.spotify.com/intl-es/artist/4u54qrbDZgzaM3SdbEctEc" target="_blank" rel="noopener" class="btn dark sm">Spotify</a>
 <a href="https://www.youtube.com/@localsrockband/videos" target="_blank" rel="noopener" class="btn outline-d sm">Ver videoclip</a>
@@ -223,7 +236,7 @@ footer .wrap{padding-top:48px;padding-bottom:48px;display:flex;flex-wrap:wrap;al
 <article class="paper stk single" style="--r:-0.8deg">
 <div class="tape" style="top:-15px;left:50%;margin-left:-60px;transform:rotate(-7deg)"></div>
 <img src="img/c9d7284bde.jpg" alt="Portada de Esclavo del sol" class="cover">
-<div class="col6"><span class="mono small dim">Single · [AÑO]</span><h3 class="anton h3">Esclavo del sol</h3></div>
+<div class="col6"><span class="mono small dim">Single · 2026</span><h3 class="anton h3">Esclavo del sol</h3></div>
 <div class="row10" style="margin-top:auto">
 <a href="https://open.spotify.com/intl-es/artist/4u54qrbDZgzaM3SdbEctEc" target="_blank" rel="noopener" class="btn dark sm">Spotify</a>
 <a href="https://www.youtube.com/@localsrockband" target="_blank" rel="noopener" class="btn outline-d sm">YouTube</a>
@@ -261,10 +274,10 @@ footer .wrap{padding-top:48px;padding-bottom:48px;display:flex;flex-wrap:wrap;al
 <p style="margin:0;max-width:440px;font-size:17px;line-height:1.6">5 amigos de Cádiz. Entre la playa, el skate park y la música se juntaron los LOCALS…</p>
 <span class="marker" style="font-size:30px;transform:rotate(-3deg);transform-origin:left">Si no eres de aquí… ya lo serás</span>
 </div>
-<div class="collage">
-<div class="paper stk ph" style="left:0;top:30px;width:58%;transform:rotate(-4deg);z-index:1"><div class="tape" style="top:-14px;left:30%;transform:rotate(4deg)"></div><img src="img/a5ca17c514.jpg" alt="LOCALS en directo" style="aspect-ratio:1170/911"><span class="mono" style="position:absolute;bottom:8px;right:12px;font-size:11px;color:#55534E">foto: Vilca</span></div>
+<div class="collage" id="collage">
+<div class="paper stk ph" style="left:0;top:30px;width:58%;transform:rotate(-4deg);z-index:1"><div class="tape" style="top:-14px;left:30%;transform:rotate(4deg)"></div><img src="img/a5ca17c514.jpg" alt="LOCALS en directo" style="aspect-ratio:4/3"></div>
 <div class="paper stk ph" style="right:0;top:0;width:36%;transform:rotate(5deg);z-index:2"><div class="tape" style="width:80px;height:24px;top:-12px;left:30%;transform:rotate(-8deg)"></div><img src="img/fb25b34b94.jpg" alt="Guitarra en el local de ensayo" style="aspect-ratio:3/4"></div>
-<div class="paper stk ph" style="left:18%;bottom:0;width:64%;transform:rotate(2deg);z-index:3"><div class="tape" style="top:-14px;right:20%;transform:rotate(-5deg)"></div><img src="img/c2506e7587.jpg" alt="LOCALS ensayando" style="aspect-ratio:1280/693"></div>
+<div class="paper stk ph" style="left:18%;bottom:0;width:64%;transform:rotate(2deg);z-index:3"><div class="tape" style="top:-14px;right:20%;transform:rotate(-5deg)"></div><img src="img/c2506e7587.jpg" alt="LOCALS ensayando" style="aspect-ratio:16/9"></div>
 </div>
 </div>
 </section>
@@ -351,7 +364,7 @@ footer .wrap{padding-top:48px;padding-bottom:48px;display:flex;flex-wrap:wrap;al
 <div style="display:flex;align-items:center;gap:14px"><img src="img/45598f522a.png" alt="" style="width:64px;height:64px"><img src="img/89337bb919.png" alt="LOCALS" style="height:52px"></div>
 <span class="mono" style="font-size:13px;letter-spacing:.14em;text-transform:uppercase">Rock · Cádiz</span>
 </div>
-<div class="cards"><a href="tel:+34644590743" class="citem"><span class="cicon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2"/></svg></span><span class="col"><span class="mono" style="font-size:12px;text-transform:uppercase">Teléfono</span><span class="cval">644 59 07 43</span></span></a><a href="mailto:localsrockband@gmail.com" class="citem"><span class="cicon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span class="col"><span class="mono" style="font-size:12px;text-transform:uppercase">Email</span><span class="cval">localsrockband@gmail.com</span></span></a><a href="https://www.instagram.com/locals.rb/" target="_blank" rel="noopener" class="citem"><span class="cicon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></span><span class="col"><span class="mono" style="font-size:12px;text-transform:uppercase">Instagram</span><span class="cval">@locals.rb</span></span></a><a href="https://www.youtube.com/@localsrockband" target="_blank" rel="noopener" class="citem"><span class="cicon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.5v5l4.5-2.5z"/></svg></span><span class="col"><span class="mono" style="font-size:12px;text-transform:uppercase">YouTube</span><span class="cval">@localsrockband</span></span></a></div>
+<div class="cards"><a href="tel:+34644590743" class="citem"><span class="cicon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2"/></svg></span><span class="col"><span class="mono" style="font-size:12px;text-transform:uppercase">Teléfono</span><span class="cval">644 59 07 43</span></span></a><a href="mailto:localsrockband@gmail.com" class="citem"><span class="cicon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span class="col"><span class="mono" style="font-size:12px;text-transform:uppercase">Email</span><span class="cval">localsrockband@gmail.com</span></span></a><a href="https://www.instagram.com/locals.rb/" target="_blank" rel="noopener" class="citem"><span class="cicon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></span><span class="col"><span class="mono" style="font-size:12px;text-transform:uppercase">Instagram</span><span class="cval">@locals.rb</span></span></a><a href="https://www.youtube.com/@localsrockband" target="_blank" rel="noopener" class="citem"><span class="cicon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.5v5l4.5-2.5z"/></svg></span><span class="col"><span class="mono" style="font-size:12px;text-transform:uppercase">YouTube</span><span class="cval">@localsrockband</span></span></a></div>
 <a href="https://open.spotify.com/intl-es/artist/4u54qrbDZgzaM3SdbEctEc" target="_blank" rel="noopener" class="btn dark" style="align-self:flex-start">Escúchanos en Spotify →</a>
 </div>
 </div>
@@ -363,27 +376,13 @@ footer .wrap{padding-top:48px;padding-bottom:48px;display:flex;flex-wrap:wrap;al
 <h2 class="anton" style="margin:0;font-size:clamp(36px,5vw,56px);text-transform:uppercase;line-height:1">Síguenos <span style="color:var(--sky)">@locals.rb</span></h2>
 <a href="https://www.instagram.com/locals.rb/" target="_blank" rel="noopener" class="btn outline lift">Abrir Instagram →</a>
 </div>
-<div class="grid-insta">
-<a href="https://www.instagram.com/locals.rb/" target="_blank" rel="noopener" aria-label="Ver Instagram de LOCALS" class="paper lift polaroid" style="--r:-3deg">
-<div class="tape" style="width:70px;height:22px;top:-11px;left:50%;margin-left:-35px;transform:rotate(-4deg)"></div>
-<img src="img/a5ca17c514.jpg" alt="" style="display:block;width:100%;aspect-ratio:1;object-fit:cover;object-position:30% 40%">
-</a>
-<a href="https://www.instagram.com/locals.rb/" target="_blank" rel="noopener" aria-label="Ver Instagram de LOCALS" class="paper lift polaroid" style="--r:2deg">
-<div class="tape" style="width:70px;height:22px;top:-11px;left:50%;margin-left:-35px;transform:rotate(6deg)"></div>
-<img src="img/fb25b34b94.jpg" alt="" style="display:block;width:100%;aspect-ratio:1;object-fit:cover;object-position:50% 50%">
-</a>
-<a href="https://www.instagram.com/locals.rb/" target="_blank" rel="noopener" aria-label="Ver Instagram de LOCALS" class="paper lift polaroid" style="--r:-1deg">
-<div class="tape" style="width:70px;height:22px;top:-11px;left:50%;margin-left:-35px;transform:rotate(-8deg)"></div>
-<img src="img/891f52a83b.jpg" alt="" style="display:block;width:100%;aspect-ratio:1;object-fit:cover;object-position:40% 50%">
-</a>
-<a href="https://www.instagram.com/locals.rb/" target="_blank" rel="noopener" aria-label="Ver Instagram de LOCALS" class="paper lift polaroid" style="--r:3deg">
-<div class="tape" style="width:70px;height:22px;top:-11px;left:50%;margin-left:-35px;transform:rotate(3deg)"></div>
-<img src="img/c2506e7587.jpg" alt="" style="display:block;width:100%;aspect-ratio:1;object-fit:cover;object-position:30% 50%">
-</a>
-<a href="https://www.instagram.com/locals.rb/" target="_blank" rel="noopener" aria-label="Ver Instagram de LOCALS" class="paper lift polaroid" style="--r:-2deg">
-<div class="tape" style="width:70px;height:22px;top:-11px;left:50%;margin-left:-35px;transform:rotate(-3deg)"></div>
-<img src="img/2921b1d5c2.jpg" alt="" style="display:block;width:100%;aspect-ratio:1;object-fit:cover;object-position:50% 50%">
-</a>
+<div class="grid-insta" id="insta-grid">
+<a href="https://www.instagram.com/locals.rb/" target="_blank" rel="noopener" aria-label="Ver Instagram de LOCALS" class="paper lift polaroid" style="--r:-3deg"><div class="tape" style="width:70px;height:22px;top:-11px;left:50%;margin-left:-35px;transform:rotate(-4deg)"></div><img src="img/a5ca17c514.jpg" alt="" style="object-position:30% 40%"></a>
+<a href="https://www.instagram.com/locals.rb/" target="_blank" rel="noopener" aria-label="Ver Instagram de LOCALS" class="paper lift polaroid" style="--r:2deg"><div class="tape" style="width:70px;height:22px;top:-11px;left:50%;margin-left:-35px;transform:rotate(6deg)"></div><img src="img/fb25b34b94.jpg" alt=""></a>
+<a href="https://www.instagram.com/locals.rb/" target="_blank" rel="noopener" aria-label="Ver Instagram de LOCALS" class="paper lift polaroid" style="--r:-1deg"><div class="tape" style="width:70px;height:22px;top:-11px;left:50%;margin-left:-35px;transform:rotate(-8deg)"></div><img src="img/891f52a83b.jpg" alt="" style="object-position:40% 50%"></a>
+<a href="https://www.instagram.com/locals.rb/" target="_blank" rel="noopener" aria-label="Ver Instagram de LOCALS" class="paper lift polaroid" style="--r:3deg"><div class="tape" style="width:70px;height:22px;top:-11px;left:50%;margin-left:-35px;transform:rotate(3deg)"></div><img src="img/c2506e7587.jpg" alt="" style="object-position:30% 50%"></a>
+<a href="https://www.instagram.com/locals.rb/" target="_blank" rel="noopener" aria-label="Ver Instagram de LOCALS" class="paper lift polaroid" style="--r:-2deg"><div class="tape" style="width:70px;height:22px;top:-11px;left:50%;margin-left:-35px;transform:rotate(-3deg)"></div><img src="img/63c1c0a2d5.jpg" alt="" style="object-position:35% 50%"></a>
+<a href="https://www.instagram.com/locals.rb/" target="_blank" rel="noopener" aria-label="Ver Instagram de LOCALS" class="paper lift polaroid" style="--r:1.5deg"><div class="tape" style="width:70px;height:22px;top:-11px;left:50%;margin-left:-35px;transform:rotate(5deg)"></div><img src="img/2921b1d5c2.jpg" alt=""></a>
 </div>
 </div>
 </section>
@@ -393,7 +392,7 @@ footer .wrap{padding-top:48px;padding-bottom:48px;display:flex;flex-wrap:wrap;al
 <div class="wrap">
 <div style="display:flex;align-items:center;gap:14px"><img src="img/79aca3096d.png" alt="" style="width:52px;height:52px"><img src="img/e9071626e5.png" alt="LOCALS" style="height:44px"></div>
 <nav class="mono" style="display:flex;flex-wrap:wrap;gap:20px;font-size:14px;text-transform:uppercase" aria-label="Redes"><a href="https://www.instagram.com/locals.rb/" target="_blank" rel="noopener">Instagram</a><a href="https://www.youtube.com/@localsrockband" target="_blank" rel="noopener">YouTube</a><a href="https://open.spotify.com/intl-es/artist/4u54qrbDZgzaM3SdbEctEc" target="_blank" rel="noopener">Spotify</a><a href="#contacto">Contacto</a></nav>
-<span style="color:#8A877F;font-size:13px">© 2026 LOCALS · Cádiz · Foto directo: Vilca</span>
+<span style="color:#8A877F;font-size:13px">© 2026 LOCALS · Cádiz</span>
 </div>
 </footer>
 </div>
@@ -402,6 +401,61 @@ footer .wrap{padding-top:48px;padding-bottom:48px;display:flex;flex-wrap:wrap;al
  var b=document.querySelector('.menu-btn'),n=document.getElementById('nav');
  b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});
  n.addEventListener('click',function(e){if(e.target.tagName==='A'){n.classList.remove('open');b.setAttribute('aria-expanded','false');}});
+})();
+
+/* Fotos de "La banda" y "Síguenos": salen del Instagram de @locals.rb
+   (vía /api/insta). Si el feed no está activo, rotan las fotos de /img. */
+(function(){
+ var IG='https://www.instagram.com/locals.rb/';
+ var LOCAL=[
+  {img:'img/63c1c0a2d5.jpg',alt:'LOCALS ensayando'},
+  {img:'img/c2506e7587.jpg',alt:'LOCALS ensayando'},
+  {img:'img/a5ca17c514.jpg',alt:'LOCALS en directo',credit:'foto: Vilca'},
+  {img:'img/fb25b34b94.jpg',alt:'Guitarra en el local de ensayo'},
+  {img:'img/891f52a83b.jpg',alt:'LOCALS en directo'}
+ ];
+ function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+ function fillCollage(pool){
+  var slots=document.querySelectorAll('#collage .ph');
+  var pick=shuffle(pool);
+  for(var i=0;i<slots.length;i++){
+   var p=pick[i%pick.length],img=slots[i].querySelector('img');
+   img.src=p.img; img.alt=p.alt||'LOCALS';
+   var c=slots[i].querySelector('.credit');
+   if(p.credit){ if(!c){c=document.createElement('span');c.className='credit mono';slots[i].appendChild(c);} c.textContent=p.credit; }
+   else if(c){ c.remove(); }
+  }
+ }
+ function fillInsta(posts){
+  var grid=document.getElementById('insta-grid'); if(!grid) return;
+  var rots=[-3,2,-1,3,-2,1.5], tapes=[-4,6,-8,3,-3,5];
+  var frag=document.createDocumentFragment();
+  posts.slice(0,6).forEach(function(p,i){
+   var a=document.createElement('a');
+   a.href=(/^https:\/\/(www\.)?instagram\.com\//.test(p.href)?p.href:IG);
+   a.target='_blank'; a.rel='noopener';
+   a.className='paper lift polaroid';
+   a.style.setProperty('--r',rots[i%6]+'deg');
+   a.setAttribute('aria-label','Ver publicación de @locals.rb en Instagram');
+   var t=document.createElement('div'); t.className='tape';
+   t.style.cssText='width:70px;height:22px;top:-11px;left:50%;margin-left:-35px;transform:rotate('+tapes[i%6]+'deg)';
+   var im=document.createElement('img'); im.src=p.img; im.alt=p.alt||''; im.loading='lazy';
+   a.appendChild(t); a.appendChild(im); frag.appendChild(a);
+  });
+  grid.replaceChildren(frag);
+ }
+ fillCollage(LOCAL);
+ if(!/^https?:/.test(location.protocol)) return;
+ fetch('/api/insta',{headers:{'Accept':'application/json'}})
+  .then(function(r){return r.status===200?r.json():null;})
+  .then(function(d){
+   if(!d||!Array.isArray(d.posts)) return;
+   var posts=d.posts.filter(function(p){return p&&typeof p.img==='string'&&p.img.indexOf('https://')===0;});
+   if(!posts.length) return;
+   fillInsta(posts);
+   fillCollage(posts.length>=3?posts:posts.concat(LOCAL));
+  })
+  .catch(function(){});
 })();
 </script>
 </body>
